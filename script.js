@@ -1,4 +1,4 @@
-// Estrelas do fundo
+// Fundo estelar com partículas
 const canvas = document.getElementById('spaceCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -45,14 +45,14 @@ function animateStars(){
 }
 animateStars();
 
-// Meteoros com dicas místicas
+// Meteoros interativos
 const meteorZone = document.getElementById('meteorZone');
 const dicaBox = document.getElementById('dicaBox');
 
 const dicas = [
   "🔮 Crie um canal de sabedoria estelar para ideias dos membros.",
   "🧿 Use cargos como Arcanista, Guardião e Sonhador Cósmico.",
-  "🌙 Que tal rituais semanais como eventos interdimensional?",
+  "🌙 Que tal rituais semanais como eventos interdimensionais?",
   "🛸 Ofereça recompensas místicas através de bots.",
   "🌌 Personalize emojis e reações com energia lunar."
 ];
