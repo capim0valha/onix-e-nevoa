@@ -1,4 +1,3 @@
-// Fundo estelar com partículas
 const canvas = document.getElementById('spaceCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -45,16 +44,16 @@ function animateStars(){
 }
 animateStars();
 
-// Meteoros interativos
+// Meteoros
 const meteorZone = document.getElementById('meteorZone');
 const dicaBox = document.getElementById('dicaBox');
 
 const dicas = [
   "🔮 Crie um canal de sabedoria estelar para ideias dos membros.",
-  "🧿 Use cargos como Arcanista, Guardião e Sonhador Cósmico.",
-  "🌙 Que tal rituais semanais como eventos interdimensionais?",
+  "🌙 Use cargos como Arcanista, Guardião e Viajante Cósmico.",
   "🛸 Ofereça recompensas místicas através de bots.",
-  "🌌 Personalize emojis e reações com energia lunar."
+  "🌌 Personalize emojis com energia lunar.",
+  "✨ Organize rituais cósmicos semanais."
 ];
 
 function criarMeteoros(qtd) {
@@ -62,7 +61,7 @@ function criarMeteoros(qtd) {
     const meteor = document.createElement('div');
     meteor.classList.add('meteor');
     meteor.style.left = `${Math.random() * 90}%`;
-    meteor.style.animationDuration = `${7 + Math.random() * 5}s`;
+    meteor.style.animationDuration = `${8 + Math.random() * 4}s`;
 
     meteor.addEventListener('click', () => {
       const dica = dicas[Math.floor(Math.random() * dicas.length)];
