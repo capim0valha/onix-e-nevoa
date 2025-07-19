@@ -1,10 +1,11 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(ellipse at bottom, #192a56 0%, #0a0f26 100%);
+  background: radial-gradient(circle, #192a56, #0a0f26);
   color: #dff6ff;
   overflow-x: hidden;
   overflow-y: auto;
+  position: relative;
 }
 
 #spaceCanvas {
@@ -23,7 +24,7 @@ body::before {
   background: url('https://raw.githubusercontent.com/nightsky-labs/stars-bg/main/stars.png');
   animation: twinkle 12s linear infinite;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -33,39 +34,39 @@ body::before {
 }
 
 .container {
-  text-align: center;
-  padding: 40px;
   position: relative;
   z-index: 1;
+  padding: 50px;
+  text-align: center;
 }
 
 .title {
   font-size: 3em;
-  animation: shimmer 4s infinite;
+  animation: shimmer 3s infinite;
 }
 
 .subtitle {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  font-size: 1.3em;
+  margin-bottom: 30px;
   color: #a3f7ff;
 }
 
 .meteoros {
   position: relative;
-  height: 220px;
-  margin: 30px 0;
+  height: 250px;
+  margin-bottom: 20px;
 }
 
 .meteor {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: radial-gradient(circle at 30% 30%, #00d4ff, #0077be);
+  background: radial-gradient(circle, #00d4ff, #0077be);
   border-radius: 50%;
-  animation: floatMeteor 12s linear infinite;
+  animation: floatMeteor 10s linear infinite;
   cursor: pointer;
+  box-shadow: 0 0 12px #00f0ff;
   transition: transform 0.3s;
-  box-shadow: 0 0 15px #00f0ff;
   z-index: 2;
 }
 
@@ -74,19 +75,18 @@ body::before {
 }
 
 @keyframes floatMeteor {
-  from { top: 0; }
-  to { top: 100%; }
+  from { top: -40px; }
+  to { top: 250px; }
 }
 
 .dica-box {
   margin: 20px auto;
-  padding: 18px;
-  max-width: 400px;
-  background: rgba(0,0,50,0.2);
+  padding: 15px;
+  background: rgba(0, 0, 50, 0.3);
   border: 1px solid #a3f7ff;
-  border-radius: 12px;
+  border-radius: 10px;
+  max-width: 400px;
   backdrop-filter: blur(10px);
-  font-size: 1em;
   color: #e6fbff;
   display: none;
 }
@@ -94,43 +94,49 @@ body::before {
 .motivos ul {
   list-style: none;
   padding: 0;
+  animation: fadeInUp 2s ease forwards;
 }
 
 .motivos li {
-  margin: 10px;
+  margin: 12px;
   font-size: 1.1em;
 }
 
 .convite {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .botao {
-  display: inline-block;
-  margin-top: 20px;
   padding: 15px 25px;
   background-color: #00bcd4;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: bold;
   animation: pulse 2s infinite;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 0.9em;
   color: #a4c8e3;
 }
 
 @keyframes shimmer {
-  0% { text-shadow: 0 0 12px #00d4ff; }
+  0% { text-shadow: 0 0 10px #00d4ff; }
   50% { text-shadow: 0 0 20px #a3f7ff; }
-  100% { text-shadow: 0 0 12px #00d4ff; }
+  100% { text-shadow: 0 0 10px #00d4ff; }
 }
 
 @keyframes pulse {
   0% { box-shadow: 0 0 8px #00caff; }
-  50% { box-shadow: 0 0 24px #a3f7ff; }
+  50% { box-shadow: 0 0 20px #a3f7ff; }
   100% { box-shadow: 0 0 8px #00caff; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
